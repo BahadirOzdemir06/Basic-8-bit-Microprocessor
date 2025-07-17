@@ -4,14 +4,15 @@ VHDL ile 8-bit mikroişlemci tasarımı/ 8-bit Microprocessor Design with VHDL
 
 Design Hierarchy:
 
-computer.vhd                          --> En üst seviye sistem entegrasyonu
-│
-├── CPU.vhd                           --> Merkezi işlem birimi
-│   ├── control_unit.vhd             --> Komut çözümleme ve kontrol sinyalleri üretimi
-│   └── data_paths.vhd               --> Veri yolu altyapısı (registerlar, veri akışı)
-│       └── ALU.vhd                  --> Aritmetik ve mantıksal işlemler
-│
-└── memory.vhd                        --> Bellek sistemi
-    ├── program_memory.vhd           --> ROM (komut hafızası)
-    ├── data_memory.vhd              --> RAM (veri hafızası)
-    └── output_ports.vhd             --> Dış dünyaya çıkış portları
+| Module                     | Submodules                                      | Description                   |
+| -------------------------- | ----------------------------------------------- | ----------------------------- |
+| `computer.vhd`             | `CPU`, `memory`                                 | Top-level entity              |
+| ├── `CPU.vhd`              | `control_unit`, `data_paths`                    | Main CPU core logic           |
+| │   ├── `control_unit.vhd` | –                                               | Controls data path operations |
+| │   └── `data_paths.vhd`   | `ALU`                                           | Data flow architecture        |
+| │       └── `ALU.vhd`      | –                                               | Arithmetic Logic Unit         |
+| └── `memory.vhd`           | `program_memory`, `data_memory`, `output_ports` | Memory and I/O interface      |
+| ├── `program_memory.vhd`   | –                                               | Instruction ROM               |
+| ├── `data_memory.vhd`      | –                                               | General purpose RAM           |
+| └── `output_ports.vhd`     | –                                               | Output port module            |
+
