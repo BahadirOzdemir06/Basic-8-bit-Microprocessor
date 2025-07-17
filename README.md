@@ -10,7 +10,7 @@ Design Hierarchy:
 | ├── `CPU.vhd`              | `control_unit`, `data_paths`                    | Main CPU core logic           |
 | │   ├── `control_unit.vhd` | –                                               | Controls data path operations |
 | │   └── `data_paths.vhd`   | `ALU`                                           | Data flow architecture        |
-| │       └── `ALU.vhd`      | –                                               | Arithmetic Logic Unit         |
+| │          └── `ALU.vhd`   | –                                               | Arithmetic Logic Unit         |
 | └── `memory.vhd`           | `program_memory`, `data_memory`, `output_ports` | Memory and I/O interface      |
 | ├── `program_memory.vhd`   | –                                               | Instruction ROM               |
 | ├── `data_memory.vhd`      | –                                               | General purpose RAM           |
