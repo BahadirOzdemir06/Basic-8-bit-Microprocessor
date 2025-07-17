@@ -9,7 +9,7 @@ computer.vhd
 ├── CPU.vhd                           
 │   ├── control_unit.vhd             
 │   └── data_paths.vhd              
-│       └── ALU.vhd                  
+│       └──-------ALU.vhd                  
 │
 └── memory.vhd                       
     ├── program_memory.vhd         
